@@ -14,6 +14,18 @@ namespace Debito_Es1
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(
+                    name: "es1",
+                    policy =>
+                    {
+                        policy.WithOrigins("*")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                    });
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -25,8 +37,9 @@ namespace Debito_Es1
 
             app.UseHttpsRedirection();
 
+            app.UseCors("es1");
             app.UseAuthorization();
-            
+
             app.UseStaticFiles();
 
             app.MapControllers();

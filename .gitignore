@@ -1,3 +1,5 @@
 **/.vs/**
 **/bin/**
 **/obj/**
+**/*.user
+/es-1/frontend/es1/.vscode

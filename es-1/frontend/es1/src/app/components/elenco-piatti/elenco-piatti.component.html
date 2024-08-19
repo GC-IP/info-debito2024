@@ -1,0 +1,6 @@
+<h3>Elenco dei piatti</h3>
+<ul *ngIf="piatti">
+    <li *ngFor="let piatto of piatti">
+        Nome: {{piatto.nome}} (calorie: {{piatto.calorie}} kcal)
+    </li>
+</ul>
