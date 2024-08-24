@@ -7,5 +7,5 @@
         public int Calorie { get; set; }
         public float Prezzo { get; set; }
 
-}
+    }
 }

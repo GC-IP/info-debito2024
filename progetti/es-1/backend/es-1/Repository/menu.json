@@ -1,0 +1,22 @@
+[
+    {
+        "giorno": "Lunedi",
+        "codice": 1,
+        "primo": {
+            "nome": "Gorgonzola",
+            "descrizione": null,
+            "calorie": 1000,
+            "prezzo": 0
+        },
+        "secondo": {
+            "nome": "Mela",
+            "descrizione": null,
+            "calorie": 0,
+            "prezzo": 0
+        },
+        "bevanda": null,
+        "numAntipasti": 0,
+        "dolce": false,
+        "prezzoTOT": 0
+    }
+]

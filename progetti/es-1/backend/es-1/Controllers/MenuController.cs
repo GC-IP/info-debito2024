@@ -14,7 +14,7 @@ namespace Debito_Es1.Controllers
             lista.Add(new Menu
             {
                 Giorno = "Lunedi",
-                Prezzo = 20
+            
             });
             return lista;
         }

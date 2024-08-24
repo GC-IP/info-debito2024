@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ElencoPiattiComponent } from './components/elenco-piatti/elenco-piatti.component';
 import { ElencoMenuComponent } from './components/elenco-menu/elenco-menu.component';
+import { FormPiattoComponent } from './components/form-piatto/form-piatto.component';
 
 @Component({
   selector: 'app-root',
