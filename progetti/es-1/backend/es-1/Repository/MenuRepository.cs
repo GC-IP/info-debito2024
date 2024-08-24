@@ -6,15 +6,15 @@ namespace Debito_Es1.Repository
     public class MenuRepository
     {
 
-        const string FileJsonMenue = "menu.json";
+        const string FileJson = @"C:\Users\greta\OneDrive\Documenti\WORK N STUFF\school\Paleocapa\anno scolastico 2023-2024 (4ia)\INFO\info-debito2024\progetti\file-json\menu.json";
 
         public static List<Menu> ElencoMenu()
         {
-            if (!File.Exists(FileJsonMenue))
+            if (!File.Exists(FileJson))
             {
-                File.WriteAllText(FileJsonMenue, "[]");
+                File.WriteAllText(FileJson, "[]");
             }
-            var json = File.ReadAllText(FileJsonMenue);
+            var json = File.ReadAllText(FileJson);
             var lista = JsonSerializer.Deserialize<List<Menu>>(json);
             return lista;
         }
@@ -23,7 +23,7 @@ namespace Debito_Es1.Repository
             var lista = ElencoMenu();
             lista.Add(menu);
             var json = JsonSerializer.Serialize(lista);
-            File.WriteAllText(FileJsonMenue, json);
+            File.WriteAllText(FileJson, json);
         }
     }
 }
