@@ -22,12 +22,48 @@ namespace es_1_recupero.Repository
             var lista = JsonSerializer.Deserialize<List<Artigiano>>(json);
             return lista;
         }
-        public static void AggiungiQualifica(Artigiano artigiano)
+        public static void AggiungiArtigiano(Artigiano artigiano)
         {
             var lista = ElencoArtigiani();
             lista.Add(artigiano);
             var json = JsonSerializer.Serialize(lista);
             File.WriteAllText(FileJson, json);
+        }
+
+        internal static void ModificaArtigiano(Artigiano artigiano)
+        {
+            var lista = ElencoArtigiani();
+            var arti = lista.FirstOrDefault(a => a.CodiceArtigiano == artigiano.CodiceArtigiano);
+            if(arti == null)
+            {
+                return;
+            }
+            arti.RichiestaPrezzo = artigiano.RichiestaPrezzo;
+            arti.Qualifica = artigiano.Qualifica;
+            arti.Nome = artigiano.Nome;
+            arti.ComuneResidenza = artigiano.ComuneResidenza;
+;
+            var json = JsonSerializer.Serialize(lista);
+            File.WriteAllText(FileJson, json);
+        }
+
+        internal static void EliminaArtigiano(Artigiano artigiano)
+        {
+            var lista = ElencoArtigiani();
+            var arti = lista.FirstOrDefault(a => a.CodiceArtigiano == artigiano.CodiceArtigiano);
+            if (arti != null)
+            {
+                lista.Remove(arti);
+                var json = JsonSerializer.Serialize(lista);
+                File.WriteAllText(FileJson, json);
+            }
+        }
+
+        internal static Artigiano ArtigianoPerCodice(int codiceArtigiano)
+        {
+            var lista = ElencoArtigiani();
+            var arti = lista.FirstOrDefault(a => a.CodiceArtigiano == codiceArtigiano);
+            return arti;
         }
     }
 }

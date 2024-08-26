@@ -738,7 +738,7 @@
 											"font": "Arial;13;1",
 											"left": 25,
 											"top": 293,
-											"width": 346.7568359375,
+											"width": 521.60302734375,
 											"height": 13,
 											"text": "GestioneArtigiano"
 										},
@@ -773,7 +773,7 @@
 									"font": "Arial;13;0",
 									"left": 20,
 									"top": 286,
-									"width": 356.7568359375,
+									"width": 531.60302734375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGRdXSf1Jg9a6g="
@@ -800,7 +800,7 @@
 									"font": "Arial;13;0",
 									"left": 20,
 									"top": 311,
-									"width": 356.7568359375,
+									"width": 531.60302734375,
 									"height": 10
 								},
 								{
@@ -825,7 +825,7 @@
 											"font": "Arial;13;0",
 											"left": 25,
 											"top": 326,
-											"width": 346.7568359375,
+											"width": 521.60302734375,
 											"height": 13,
 											"text": "+InserisciArtigiano(Artigiano: Artigiano)",
 											"horizontalAlignment": 0
@@ -842,7 +842,7 @@
 											"font": "Arial;13;0",
 											"left": 25,
 											"top": 341,
-											"width": 346.7568359375,
+											"width": 521.60302734375,
 											"height": 13,
 											"text": "+ModificaArtigiano(CodiceArtigiano: int, Artigiano: Artigiano)",
 											"horizontalAlignment": 0
@@ -859,7 +859,7 @@
 											"font": "Arial;13;0",
 											"left": 25,
 											"top": 356,
-											"width": 346.7568359375,
+											"width": 521.60302734375,
 											"height": 13,
 											"text": "+EliminaComune(ComuneResidenza: string)",
 											"horizontalAlignment": 0
@@ -876,9 +876,26 @@
 											"font": "Arial;13;0",
 											"left": 25,
 											"top": 371,
-											"width": 346.7568359375,
+											"width": 521.60302734375,
 											"height": 13,
-											"text": "+CercaQualifica(Qualifica: Qualifica): Artigiano",
+											"text": "+CercaQualifica(Qualifica: Qualifica, ordPerNome: bool, ordPerComune: bool): Artigiano[*]",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGRih+WJKVaGiI=",
+											"_parent": {
+												"$ref": "AAAAAAGRdXSf1ZhCLdE="
+											},
+											"model": {
+												"$ref": "AAAAAAGRih+WGKVX5+c="
+											},
+											"font": "Arial;13;0",
+											"left": 25,
+											"top": 386,
+											"width": 521.60302734375,
+											"height": 13,
+											"text": "+PrezzoPiuBasso(idQualifica: string): Artigiano[*]",
 											"horizontalAlignment": 0
 										},
 										{
@@ -892,8 +909,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 25,
-											"top": 386,
-											"width": 346.7568359375,
+											"top": 401,
+											"width": 521.60302734375,
 											"height": 13,
 											"text": "+CostoMedio(IdQualifica): float",
 											"horizontalAlignment": 0
@@ -902,8 +919,8 @@
 									"font": "Arial;13;0",
 									"left": 20,
 									"top": 321,
-									"width": 356.7568359375,
-									"height": 83
+									"width": 531.60302734375,
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -942,7 +959,7 @@
 							"containerChangeable": true,
 							"left": 20,
 							"top": 286,
-							"width": 355.7568359375,
+							"width": 530.60302734375,
 							"height": 133,
 							"nameCompartment": {
 								"$ref": "AAAAAAGRdXSf1Jg8xtw="
@@ -1314,8 +1331,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 119,
-									"top": 267,
+									"left": 132,
+									"top": 279,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -1335,8 +1352,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 107,
-									"top": 274,
+									"left": 123,
+									"top": 290,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -1356,8 +1373,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 143,
-									"top": 254,
+									"left": 148,
+									"top": 257,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -1463,7 +1480,7 @@
 								"$ref": "AAAAAAGRdXSf1Jg7SJY="
 							},
 							"lineStyle": 3,
-							"points": "147:285;136:271;136:257",
+							"points": "162:285;136:271;136:257",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGRdXZnAZoW09I="
@@ -2086,6 +2103,24 @@
 								},
 								{
 									"_type": "UMLParameter",
+									"_id": "AAAAAAGRihVK0qRGti0=",
+									"_parent": {
+										"$ref": "AAAAAAGRdX272KJQo3o="
+									},
+									"name": "ordPerNome",
+									"type": "bool"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGRihWcXKSlmcM=",
+									"_parent": {
+										"$ref": "AAAAAAGRdX272KJQo3o="
+									},
+									"name": "ordPerComune",
+									"type": "bool"
+								},
+								{
+									"_type": "UMLParameter",
 									"_id": "AAAAAAGRfnc2oL++YVE=",
 									"_parent": {
 										"$ref": "AAAAAAGRdX272KJQo3o="
@@ -2094,6 +2129,39 @@
 									"type": {
 										"$ref": "AAAAAAGRdW3s4pedbHM="
 									},
+									"multiplicity": "*",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGRih+WGKVX5+c=",
+							"_parent": {
+								"$ref": "AAAAAAGRdXSf1Jg5GfU="
+							},
+							"name": "PrezzoPiuBasso",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGRih/n8KWvC/k=",
+									"_parent": {
+										"$ref": "AAAAAAGRih+WGKVX5+c="
+									},
+									"name": "idQualifica",
+									"type": "string"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGRiiAm9qYOuIw=",
+									"_parent": {
+										"$ref": "AAAAAAGRih+WGKVX5+c="
+									},
+									"name": "artigiani",
+									"type": {
+										"$ref": "AAAAAAGRdW3s4pedbHM="
+									},
+									"multiplicity": "*",
 									"direction": "return"
 								}
 							]
