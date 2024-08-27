@@ -70,5 +70,21 @@ namespace es_1_recupero
         {
             gestioneArtigiano.EliminaComune(txtComune4.Text);
         }
+
+        private void btnCarica5_Click(object sender, EventArgs e)
+        {
+            dvArtigiani5.DataSource = gestioneArtigiano.PrezzoPiuBasso(txtQualifica5.Text);
+        }
+
+        private void btnAvvia6_Click(object sender, EventArgs e)
+        {
+            var qualifiche = QualificaRepository.ElencoQualifiche();
+            var risultato = new List<KeyValuePair<string, float>>();
+            foreach(var q in qualifiche)
+            {
+                risultato.Add(new KeyValuePair<string, float>(q.IdQualifica, gestioneArtigiano.CostoMedio(q.IdQualifica)));
+            }
+            gvQualifiche6.DataSource = risultato;
+        }
     }
 }

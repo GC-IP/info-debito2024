@@ -38,7 +38,7 @@ namespace es_1_recupero.Controllers
         public List<Artigiano> CercaQualifica(Qualifica qualifica, bool ordPerNome, bool ordPerComune)
         {
             var lista = ArtigianoRepository.ElencoArtigiani();
-            var qualificati = lista.Where(a => a.Qualifica  == qualifica);
+            var qualificati = lista.Where(a => a.Qualifica?.IdQualifica  == qualifica.IdQualifica);
             if(ordPerNome)
             {
                 return qualificati.OrderBy(a => a.Nome).ToList();
@@ -53,7 +53,7 @@ namespace es_1_recupero.Controllers
         public List<Artigiano> PrezzoPiuBasso(string idQualifica)
         {
             var lista = ArtigianoRepository.ElencoArtigiani();
-            var qualificati = lista.Where(a => a.Qualifica.IdQualifica == idQualifica);
+            var qualificati = lista.Where(a => a.Qualifica?.IdQualifica == idQualifica).ToList();
             var prezzoPiuBasso = qualificati.Min(a => a.RichiestaPrezzo);
             return qualificati.Where(a => a.RichiestaPrezzo == prezzoPiuBasso).ToList();
         }
@@ -61,7 +61,11 @@ namespace es_1_recupero.Controllers
         public float CostoMedio(string idQualifica)
         {
             var lista = ArtigianoRepository.ElencoArtigiani();
-            var qualificati = lista.Where(a => a.Qualifica.IdQualifica == idQualifica);
+            var qualificati = lista.Where(a => a.Qualifica?.IdQualifica == idQualifica).ToList();
+            if(qualificati.Count == 0)
+            {
+                return 0;
+            }
             return qualificati.Average(a => a.RichiestaPrezzo);
         }
     }

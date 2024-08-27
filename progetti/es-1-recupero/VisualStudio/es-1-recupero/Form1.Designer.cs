@@ -63,13 +63,13 @@
             btnElimina4 = new Button();
             label10 = new Label();
             tabPage5 = new TabPage();
+            dvArtigiani5 = new DataGridView();
             btnCarica5 = new Button();
             label11 = new Label();
             txtQualifica5 = new TextBox();
             tabPage6 = new TabPage();
-            cmbQualifiche6 = new ComboBox();
-            label12 = new Label();
-            dataGridView1 = new DataGridView();
+            btnAvvia6 = new Button();
+            gvQualifiche6 = new DataGridView();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -77,8 +77,9 @@
             ((System.ComponentModel.ISupportInitialize)gvArtigiani3).BeginInit();
             tabPage4.SuspendLayout();
             tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dvArtigiani5).BeginInit();
             tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gvQualifiche6).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -414,6 +415,7 @@
             // 
             // tabPage5
             // 
+            tabPage5.Controls.Add(dvArtigiani5);
             tabPage5.Controls.Add(btnCarica5);
             tabPage5.Controls.Add(label11);
             tabPage5.Controls.Add(txtQualifica5);
@@ -424,6 +426,15 @@
             tabPage5.Text = "5";
             tabPage5.UseVisualStyleBackColor = true;
             // 
+            // dvArtigiani5
+            // 
+            dvArtigiani5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dvArtigiani5.Location = new Point(85, 98);
+            dvArtigiani5.Name = "dvArtigiani5";
+            dvArtigiani5.RowHeadersWidth = 62;
+            dvArtigiani5.Size = new Size(705, 299);
+            dvArtigiani5.TabIndex = 3;
+            // 
             // btnCarica5
             // 
             btnCarica5.Location = new Point(244, 52);
@@ -432,6 +443,7 @@
             btnCarica5.TabIndex = 2;
             btnCarica5.Text = "Carica";
             btnCarica5.UseVisualStyleBackColor = true;
+            btnCarica5.Click += btnCarica5_Click;
             // 
             // label11
             // 
@@ -451,9 +463,8 @@
             // 
             // tabPage6
             // 
-            tabPage6.Controls.Add(dataGridView1);
-            tabPage6.Controls.Add(label12);
-            tabPage6.Controls.Add(cmbQualifiche6);
+            tabPage6.Controls.Add(btnAvvia6);
+            tabPage6.Controls.Add(gvQualifiche6);
             tabPage6.Location = new Point(4, 34);
             tabPage6.Name = "tabPage6";
             tabPage6.Size = new Size(1263, 497);
@@ -461,31 +472,24 @@
             tabPage6.Text = "6";
             tabPage6.UseVisualStyleBackColor = true;
             // 
-            // cmbQualifiche6
+            // btnAvvia6
             // 
-            cmbQualifiche6.FormattingEnabled = true;
-            cmbQualifiche6.Location = new Point(270, 49);
-            cmbQualifiche6.Name = "cmbQualifiche6";
-            cmbQualifiche6.Size = new Size(182, 33);
-            cmbQualifiche6.TabIndex = 0;
+            btnAvvia6.Location = new Point(56, 47);
+            btnAvvia6.Name = "btnAvvia6";
+            btnAvvia6.Size = new Size(112, 34);
+            btnAvvia6.TabIndex = 3;
+            btnAvvia6.Text = "Avvia";
+            btnAvvia6.UseVisualStyleBackColor = true;
+            btnAvvia6.Click += btnAvvia6_Click;
             // 
-            // label12
+            // gvQualifiche6
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(56, 49);
-            label12.Name = "label12";
-            label12.Size = new Size(159, 25);
-            label12.TabIndex = 1;
-            label12.Text = "Seleziona Qualifica";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(56, 100);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(510, 296);
-            dataGridView1.TabIndex = 2;
+            gvQualifiche6.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gvQualifiche6.Location = new Point(56, 100);
+            gvQualifiche6.Name = "gvQualifiche6";
+            gvQualifiche6.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            gvQualifiche6.Size = new Size(510, 296);
+            gvQualifiche6.TabIndex = 2;
             // 
             // Form1
             // 
@@ -507,9 +511,9 @@
             tabPage4.PerformLayout();
             tabPage5.ResumeLayout(false);
             tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dvArtigiani5).EndInit();
             tabPage6.ResumeLayout(false);
-            tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gvQualifiche6).EndInit();
             ResumeLayout(false);
         }
 
@@ -554,8 +558,8 @@
         private TextBox txtQualifica5;
         private Button btnCarica5;
         private Label label11;
-        private DataGridView dataGridView1;
-        private Label label12;
-        private ComboBox cmbQualifiche6;
+        private DataGridView gvQualifiche6;
+        private DataGridView dvArtigiani5;
+        private Button btnAvvia6;
     }
 }
