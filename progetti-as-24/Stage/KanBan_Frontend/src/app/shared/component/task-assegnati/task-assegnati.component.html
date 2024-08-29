@@ -1,0 +1,86 @@
+<div class="row">
+    <div class=" col-12">
+
+<h2>TASK ASSEGNATI</h2>
+
+              
+    <table style="width:100%">
+        <tr>
+            <th style="width:16%">Utente</th>
+            <th style="width:28%">TODO</th>
+            <th style="width:28%">DOING</th>
+            <th style="width:28%">DONE</th>
+        </tr>
+        
+        @for(utente of listaUtenti; track utente.id){
+            <tr>
+                <td>
+                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                    <div class="card-header">{{utente.nome}}</div>
+                    <div class="card-body">
+                        <div class="card-header">{{utente.mail}}</div>
+                    </div>
+                  </div></td>
+                <td style="border: 1px solid black; padding:20px">
+                    <app-task-assegnati-utente [idUtente]="utente.id" stato="TODO"></app-task-assegnati-utente>
+                    
+                </td>
+                <td style="border: 1px solid black; padding:20px">
+                    <app-task-assegnati-utente [idUtente]="utente.id" stato="DOING"></app-task-assegnati-utente>
+                </td>
+                <td style="border: 1px solid black; padding:20px">                    
+                    <app-task-assegnati-utente [idUtente]="utente.id" stato="DONE"></app-task-assegnati-utente>
+                </td>
+            </tr>
+        }
+<!--
+<div class="row">
+        <div class="col-3">            
+            <div class="card" style="width: 18rem;">
+                    <div class="card">
+                      <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">TO DO</li>
+                            <li class="list-group-item">todo</li>
+                            <li class="list-group-item">todo</li>
+                          </ul>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">            
+                <div class="card" style="width: 18rem;">
+                        <div class="card">
+                          <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">DOING</li>
+                                <li class="list-group-item">doing</li>
+                                <li class="list-group-item">doing</li>
+                              </ul>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">            
+                    <div class="card" style="width: 18rem;">
+                            <div class="card">
+                              <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">DONE</li>
+                                    <li class="list-group-item">done</li>
+                                    <li class="list-group-item">done</li>
+                                  </ul>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </tr>-->
+    </table>
+
+    </div>
+</div>

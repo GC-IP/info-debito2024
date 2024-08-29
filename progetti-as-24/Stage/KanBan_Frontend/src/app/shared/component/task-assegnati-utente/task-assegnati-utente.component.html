@@ -1,0 +1,15 @@
+<div class="row" *ngIf="listaTasksFiltrati != undefined && listaTasksFiltrati.length > 0">
+  
+  <div class="col-6" *ngFor="let task of listaTasksFiltrati">            
+      <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{task.descrizione}}</h5>
+            <p class="card-text" *ngIf="stato=='TODO'">{{task.dataTodo}}</p>
+            <p class="card-text" *ngIf="stato=='DOING'">{{task.dataDoing}}</p>
+            <p class="card-text" *ngIf="stato=='DONE'">{{task.dataDone}}</p>
+            <a id="passaDoing" *ngIf="stato=='TODO'" class="btn btn-primary" >Passa a doing</a>
+            <a id="passaDone" *ngIf="stato=='DOING'" class="btn btn-primary" >Passa a DONE</a>
+          </div>
+      </div>
+  </div>
+</div>

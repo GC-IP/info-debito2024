@@ -1,0 +1,13 @@
+.simple-nav a {
+    color: #9bd3e0; /* Default color */
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease-in-out;
+}
+.simple-nav a:hover {
+    color: rgb(255, 255, 255); /* Color changes to white on hover */
+}
+.simple-nav a:selected{
+    color: rgb(120, 120, 120); 
+}
+

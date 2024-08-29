@@ -1,0 +1,20 @@
+
+<h2>TASK NON ASSEGNATI</h2>
+<div class="row">
+    @for(task of listaTasks; track task.id){
+        <div class="col-3">            
+                <div class="col-sm-9">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">{{task.id}}</h5>
+                        <p class="card-text">{{task.descrizione}}</p>
+                        <a id="AssegnaTask" class="btn btn-primary" click="AssegnaTask(task)">Assegna task</a>
+                      </div>
+                    </div>
+              </div>
+        </div>
+    }
+</div>
+
+    
+  
